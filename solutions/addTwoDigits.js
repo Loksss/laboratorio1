@@ -8,4 +8,5 @@ function addTwoDigits(n){
   }
   
 console.log(addTwoDigits(29));
+module.exports=addTwoDigits
 

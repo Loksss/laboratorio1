@@ -1,6 +1,9 @@
 const { exec } = require('child_process');
 var fs         = require('fs');
 const clc      = require('cli-color');
+const suma=require('./solutions/sum');
+const addTwoDigitss=require('./solutions/addTwoDigits');
+console.log(suma(1,2));
 fs.readdir("./solutions", (err, files) => {
   files.forEach(file => {
     if (file === "sum.js") {
@@ -101,7 +104,7 @@ function checkSolution (fn, inputs, fileouput) {
       var outdata = data.toString().split(/\n/);
       var sol = 0;
       for (var i = 0; i < posiblesolutions.length; i ++) {
-        var num = i + s1;
+        var num = i + 1;
         if (outdata[i].toString() != "" && outdata[i].toString() == posiblesolutions[i].toString()) {
           sol++;
           console.log("Test " +  num + " " + clc.green("   pass \u2713"));
@@ -117,5 +120,3 @@ function checkSolution (fn, inputs, fileouput) {
     }
   });
 }
-
-module.exports;
